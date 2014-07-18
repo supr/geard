@@ -41,6 +41,7 @@ Description=Container {{.Id}}
 [Service]
 Type=simple
 TimeoutStartSec=5m
+Restart=on-failure
 {{ if .Slice }}Slice={{.Slice}}{{ end }}
 {{ if .EnvironmentPath }}EnvironmentFile={{.EnvironmentPath}}{{ end }}
 {{end}}
